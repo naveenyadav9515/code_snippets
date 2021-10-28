@@ -1,0 +1,21 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name":"naveen",
+      "company":"tcs"
+    },
+    {
+      "id":2,
+      "name":"bharath",
+      "company":"wipro"
+    }
+  ],
+  "tableData": [
+    {
+      "id": 1,
+      "movie": "KGF",
+      "rating": 5
+    }
+  ]
+}
