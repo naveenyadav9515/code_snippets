@@ -1,8 +1,8 @@
 import './App.css';
-import API from './helpers/apicalls';
+// import API from './helpers/apicalls';
 import { useState, useEffect } from 'react';
 
-function App() {
+function App() {          
   const [error, setError] = useState(null);
   const [items, setItems] = useState([]);
   useEffect(() => {
