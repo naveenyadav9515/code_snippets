@@ -1,0 +1,4 @@
+<input type="file" (change)="selectFile($event)" accept=".xls,.xlsx">
+<button (click)="uploadFile()">upload</button>
+<button *ngIf="url" (click)="downloadFile()">download</button>
+<router-outlet></router-outlet>
