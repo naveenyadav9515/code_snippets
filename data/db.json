@@ -1,14 +1,9 @@
 {
   "users": [
     {
-      "id": 1,
-      "name":"naveen",
-      "company":"tcs"
-    },
-    {
-      "id":2,
-      "name":"bharath",
-      "company":"wipro"
+      "name": "Naveen",
+      "company": "TCS",
+      "id": 1
     }
   ],
   "tableData": [

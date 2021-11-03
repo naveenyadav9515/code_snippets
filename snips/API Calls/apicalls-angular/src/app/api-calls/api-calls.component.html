@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="container">
+    <div>
+      <input [(ngModel)]="currentObj.name" type="text" value={{currentObj.name}} placeholder="enter name">
+      <input [(ngModel)]="currentObj.company" type="text" value={{currentObj.company}} placeholder="enter company">
+      <button class="add-data" (click)="pushData({name:currentObj.name,company:currentObj.company})">
+        <span *ngIf="!updateMode">Add Record</span>
+        <span *ngIf="updateMode">Update Record</span>
+      </button>
+    </div>
+    <div class="content">
+      <table>
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>company</th>
+        </tr>
+        <tr *ngFor="let user of tableData">
+          <td>{{user.id}}</td>
+          <td>{{user.name}}</td>
+          <td>{{user.company}}</td>
+          <td><button class="add-data edits" (click)="updateData(user)">Update</button></td>
+          <td><button class="add-data edits" (click)="deleteData(user.id)">Delete</button></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+</body>
+
+</html>
