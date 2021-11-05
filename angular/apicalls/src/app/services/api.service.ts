@@ -12,6 +12,7 @@ export interface records {
   providedIn: 'root'
 })
 export class ApiService {
+  public url = '';
   constructor(private http: HttpClient) { }
 
   getData(){

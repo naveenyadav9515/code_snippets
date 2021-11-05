@@ -9,11 +9,7 @@ import { ApiService, records } from '../services/api.service';
 export class ApiCallsComponent implements OnInit {
   tableData: any;
   updateMode: boolean = false;
-  currentObj = {
-    id: 0,
-    name: '',
-    company: ''
-  };
+  currentObj:any;
   constructor(private api: ApiService) { }
 
   ngOnInit(): void {
@@ -23,30 +19,26 @@ export class ApiCallsComponent implements OnInit {
   getData() {
     this.api.getData().subscribe((response: records[]) => {
       this.tableData = response;
-      console.log(this.tableData)
     })
-    this.currentObj.name='';
-    this.currentObj.company='';
+    this.currentObj = {};
   }
 
   pushData(record: any) {
-    console.log(this.updateMode);
     if (!this.updateMode) {
-      if (record.name != "" && record.company != "") {
+      if (Object.keys(record).length>0) {
+        delete this.currentObj.id;
         this.api.putData(record).subscribe((response) => {
-          console.log(response);
           this.getData();
+          this.currentObj = {};
         });
       }
     } else {
       this.currentObj.name = record.name;
       this.currentObj.company = record.company;
       this.api.updateRecord(this.currentObj).subscribe((response) => {
-        console.log(response);
         this.updateMode = !this.updateMode;
         this.getData();
       });
-
     }
   }
 
@@ -55,13 +47,8 @@ export class ApiCallsComponent implements OnInit {
     this.updateMode = !this.updateMode;
   }
 
-  patchData() {
-
-  }
-
   deleteData(userId: any) {
-    this.api.deleteRecord(userId).subscribe(() => { });
-    this.getData();
+    this.api.deleteRecord(userId).subscribe(() => { this.getData(); });
   }
 
 }

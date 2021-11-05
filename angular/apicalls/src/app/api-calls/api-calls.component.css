@@ -2,10 +2,9 @@
     font-family: Open Sans;
 }
 .container {
-    position: absolute;
-    top: 20%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    margin: auto;
+    width: 500px;
+    margin-top: 80px;
 }
 
 .add-data {

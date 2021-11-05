@@ -1,11 +1,5 @@
 {
-  "users": [
-    {
-      "name": "Naveen",
-      "company": "TCS",
-      "id": 1
-    }
-  ],
+  "users": [],
   "tableData": [
     {
       "id": 1,

@@ -10,10 +10,11 @@
 
 <body>
   <div class="container">
+    <app-file-upload></app-file-upload>
     <div>
       <input [(ngModel)]="currentObj.name" type="text" value={{currentObj.name}} placeholder="enter name">
       <input [(ngModel)]="currentObj.company" type="text" value={{currentObj.company}} placeholder="enter company">
-      <button class="add-data" (click)="pushData({name:currentObj.name,company:currentObj.company})">
+      <button class="add-data" (click)="pushData(currentObj)">
         <span *ngIf="!updateMode">Add Record</span>
         <span *ngIf="updateMode">Update Record</span>
       </button>
