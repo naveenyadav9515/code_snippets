@@ -1,5 +1,11 @@
 {
-  "users": [],
+  "users": [
+    {
+      "name": "fhg",
+      "company": "tata",
+      "id": 1
+    }
+  ],
   "tableData": [
     {
       "id": 1,

@@ -22,11 +22,11 @@ export class ApiService {
   }
 
   deleteRecord(id:any){
-    return this.http.delete(this.url+id)
+    return this.http.delete(this.url+"/"+id)
   }
 
   updateRecord(data:any){
-    return this.http.put(this.url+data.id,data);
+    return this.http.put(this.url+"/"+data.id,data);
   }
 
   getFile(url:any) {
