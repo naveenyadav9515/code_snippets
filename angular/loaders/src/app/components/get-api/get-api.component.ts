@@ -15,9 +15,9 @@ export class GetApiComponent implements OnInit {
   ngOnInit(): void {
   }
   getData() {
-      this.api.getUsers().subscribe(res => {
-        this.data = res;
-      })
+    this.api.getUsers().subscribe(res => {
+      this.data = res;
+    })
   }
 
 }
