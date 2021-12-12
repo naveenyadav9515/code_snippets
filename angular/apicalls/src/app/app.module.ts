@@ -10,6 +10,9 @@ import { FileUploadComponent } from './file-upload/file-upload.component';
 import { FileDownloadComponent } from './file-download/file-download.component'
 import { FormsModule } from '@angular/forms';
 import { AlertsInterceptor } from './interceptors/alerts.interceptor';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { ToastrModule } from 'ngx-toastr';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +24,9 @@ import { AlertsInterceptor } from './interceptors/alerts.interceptor';
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule, // required animations module
+    ToastrModule.forRoot(), // ToastrModule added
   ],
   providers: [
     {
